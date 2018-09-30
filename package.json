@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "format": "prettier --write '**/*.{md,json}'",
+    "c": "yarn pretty-quick && git infer -A && git push"
+  },
+  "dependencies": {
+    "husky": "^1.0.1",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.7.0"
+  }
+}

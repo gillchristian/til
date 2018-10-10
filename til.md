@@ -92,3 +92,5 @@ enum regular_enum {
 ```
 
 [See compiled code](https://goo.gl/985iiV).
+
+Reference: [tweet](https://twitter.com/sulco/status/1049361905914204161?s=21).

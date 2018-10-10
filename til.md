@@ -73,3 +73,22 @@ git pull --autostash
 Stashes before pull and pops after.
 
 Reference: [tweet](https://twitter.com/patao_/status/1046837635786915840?s=19)
+
+### const enums (typescript)
+
+`const enum`s are compiled as string literals while regular `enum`s are compiled
+as a function with state.
+
+```ts
+const enum const_enum {
+  foo = "foo",
+  bar = "bar"
+}
+
+enum regular_enum {
+  foo = "foo",
+  bar = "bar"
+}
+```
+
+[See compiled code](https://goo.gl/985iiV).

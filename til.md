@@ -95,7 +95,7 @@ enum regular_enum {
 
 Reference: [tweet](https://twitter.com/sulco/status/1049361905914204161?s=21).
 
-### does not support indexing (golang)
+### fix "does not support indexing" error (golang)
 
 ```go
 func foo(m *map[string]string) {

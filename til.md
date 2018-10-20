@@ -94,3 +94,19 @@ enum regular_enum {
 [See compiled code](https://goo.gl/985iiV).
 
 Reference: [tweet](https://twitter.com/sulco/status/1049361905914204161?s=21).
+
+### does not support indexing (golang)
+
+```go
+func foo(m *map[string]string) {
+  m["foo"] // invalid operation: m["foo"] (type *map[string]string does not support indexig)
+}
+
+func foo(m *map[string]string) {
+  (*m)["foo"] // Yay!!!
+}
+```
+
+`m` is a pointer, can't be indexed. First needs to be dereferenced.
+
+Reference: [article](https://flaviocopes.com/golang-does-not-support-indexing/)

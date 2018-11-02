@@ -110,3 +110,11 @@ func foo(m *map[string]string) {
 `m` is a pointer, can't be indexed. First needs to be dereferenced.
 
 Reference: [article](https://flaviocopes.com/golang-does-not-support-indexing/)
+
+### color words diff (git)
+
+```
+git diff --color-words
+```
+
+[asciinema](https://asciinema.org/a/209841)

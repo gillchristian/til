@@ -11,13 +11,9 @@ Whenever I learn something new I add it here in `til.md`. The format is simple.
 ```md
 ## title (topic/s)
 
-<!-- Content-->
+[Content]
 
-Snippet, longer description and/or asciinema recording ...
-
-<!-- Reference -->
-
-Reference: [link to tweet/blogpost/slides/etc](#)
+[Reference]
 ```
 
 **Title**: Meaningful and concise, what I learned in a few words.

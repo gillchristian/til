@@ -1,7 +1,5 @@
 ### head & cut commands (bash)
 
-Date: 2018-09-20
-
 `head` output the first part of files
 
 `cut` remove sections from each line of files
@@ -30,13 +28,9 @@ $ curl -ILs https://example.com | head -n 1 | cut -d ' ' -f 2
 
 ### sorting a property of a struct (golang)
 
-Date: 2018-07-17
-
 https://play.golang.org/p/wVtZsfPZ_gB
 
 ### open (and create) a file on append mode (golang)
-
-Date: 2018-07-17
 
 ```go
 f, err := os.OpenFile(file, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0666)
@@ -119,7 +113,7 @@ git diff --color-words
 
 [asciinema](https://asciinema.org/a/209841)
 
-### map & filter JSON (bash, jq)
+### map & filter JSON (bash jq)
 
 I wanted to find the link for the "category theory" book in this JSON (~300
 `item`s).

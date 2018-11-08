@@ -118,3 +118,34 @@ git diff --color-words
 ```
 
 [asciinema](https://asciinema.org/a/209841)
+
+### map & filter JSON (bash, jq)
+
+I wanted to find the link for the "category theory" book in this JSON (~300
+`item`s).
+
+```json
+{
+  "reads": 15,
+  "added": 268,
+  "items": [
+    "https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/",
+    "https://twitter.com/old_sound/status/1002223622470201345?s=19",
+    "https://erikbern.com/2018/05/02/interviewing-is-a-noisy-prediction-problem.html",
+    "http://johnbender.us/2012/02/29/faster-javascript-through-category-theory/"
+    "http://blog.codepipes.com/testing/software-testing-antipatterns.html",
+    "https://mrpandey.github.io/d3graphTheory/index.html",
+    ...
+  ]
+}
+```
+
+[jq](https://stedolan.github.io/jq/) to the rescue :muscle:
+
+```bash
+$ cat ~/.reading-list | jq '.items | map(select(contains("category")))'
+[
+  "https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/",
+  "http://johnbender.us/2012/02/29/faster-javascript-through-category-theory/"
+]
+```

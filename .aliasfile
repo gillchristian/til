@@ -1,0 +1,1 @@
+alias qc="yarn pretty-quick && git infer -A && git push"

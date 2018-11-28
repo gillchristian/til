@@ -143,3 +143,47 @@ $ cat ~/.reading-list | jq '.items | map(select(contains("category")))'
   "http://johnbender.us/2012/02/29/faster-javascript-through-category-theory/"
 ]
 ```
+
+### Change default terminal with update-alternatives & x-terminal-emulator (unix)
+
+I installed [alacritty](https://github.com/jwilm/alacritty) manually with Cargo.
+That means `x-terminal-emulator` doesn't show it as one of the options so it
+cannot be used as the defualt terminal.
+
+Normally it could be updated like so:
+
+```
+$ sudo update-alternatives --config x-terminal-emulator
+There are 7 choices for the alternative x-terminal-emulator (providing /usr/bin/x-terminal-emulator).
+
+  Selection    Path                                      Priority   Status
+------------------------------------------------------------
+* 0            /usr/bin/terminator                        50        auto mode
+  1            /usr/bin/gnome-terminal.wrapper            40        manual mode
+  2            /usr/bin/koi8rxterm                        20        manual mode
+  3            /usr/bin/lxterm                            30        manual mode
+  4            /usr/bin/terminator                        50        manual mode
+  5            /usr/bin/uxterm                            20        manual mode
+  6            /usr/bin/xterm                             20        manual mode
+
+Press <enter> to keep the current choice[*], or type selection number:
+```
+
+Which means `terminator` is my default terminal (opens when pressing
+`Ctrl+Alt+t`).
+
+```
+update-alternatives - maintain symbolic links determining default commands
+```
+
+It is possible to add new entries to `update-alternatives`:
+
+```bash
+sudo update-alternatives --install <link> <name> <path> <priority>
+```
+
+For `alacritty` it was:
+
+```bash
+sudo update-alternatives --install $(which x-terminal-emulator) x-terminal-emulator $(which alacritty) 60
+```

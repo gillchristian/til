@@ -187,3 +187,11 @@ For `alacritty` it was:
 ```bash
 sudo update-alternatives --install $(which x-terminal-emulator) x-terminal-emulator $(which alacritty) 60
 ```
+
+## cut delimiter new line (bash)
+
+```bash
+$ cat file.txt | cut -d$'\\n' -f 1-3
+```
+
+Reference: [SO](https://stackoverflow.com/a/21757210/4530566).

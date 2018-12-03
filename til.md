@@ -195,3 +195,17 @@ $ cat file.txt | cut -d$'\\n' -f 1-3
 ```
 
 Reference: [SO](https://stackoverflow.com/a/21757210/4530566).
+
+## Rename a git branch (git)
+
+```
+$ git branch -m new-name
+$ git branch -m old-name new-name
+```
+
+```
+$ git push origin :old-name new-name
+$ git push origin -u new-name
+```
+
+Reference: [Rename a local and remote branch in git](https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git/).

@@ -208,4 +208,23 @@ $ git push origin :old-name new-name
 $ git push origin -u new-name
 ```
 
-Reference: [Rename a local and remote branch in git](https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git/).
+Reference:
+[Rename a local and remote branch in git](https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git/).
+
+## Remove lines containing pattern (vim)
+
+:boom:
+
+```
+:g/<pattern>/d
+```
+
+The opposite is also possible, remove all lines NOT containing the pattern.
+
+```
+:g!/<pattern>/d
+:v/<pattern>/d
+```
+
+Reference:
+[Delete all lines containing a pattern](http://vim.wikia.com/wiki/Delete_all_lines_containing_a_pattern).

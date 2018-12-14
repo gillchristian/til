@@ -1,4 +1,4 @@
-### head & cut commands (bash)
+### head & cut commands (unix)
 
 `head` output the first part of files
 
@@ -113,7 +113,7 @@ git diff --color-words
 
 [asciinema](https://asciinema.org/a/209841)
 
-### map & filter JSON (bash jq)
+### map & filter JSON (unix jq)
 
 I wanted to find the link for the "category theory" book in this JSON (~300
 `item`s).
@@ -188,7 +188,7 @@ For `alacritty` it was:
 sudo update-alternatives --install $(which x-terminal-emulator) x-terminal-emulator $(which alacritty) 60
 ```
 
-## cut delimiter new line (bash)
+## cut delimiter new line (unix)
 
 ```bash
 $ cat file.txt | cut -d$'\\n' -f 1-3
@@ -228,3 +228,28 @@ The opposite is also possible, remove all lines NOT containing the pattern.
 
 Reference:
 [Delete all lines containing a pattern](http://vim.wikia.com/wiki/Delete_all_lines_containing_a_pattern).
+
+## Pipe to command and also show in terminal (unix)
+
+I copy stuff from commands output on a daly basis using xclip.
+
+```bash
+alias c='xclip -selection c'
+
+echo 'foo' | c
+```
+
+The problem is te output doesn't show in the screen since `stdout` is piped.
+
+I already knew about [tee](<https://en.wikipedia.org/wiki/Tee_(command)>). What
+I learned is, anything that's written to `/dev/tty` is outputted to the
+terminal.
+
+```
+echo 'foo' | tee /dev/tty | c
+```
+
+That would copy 'foo' but also show it in the terminal :ok_hand:
+
+Reference:
+[What is special about /dev/tty? (answer)](https://stackoverflow.com/a/8514853/4530566).

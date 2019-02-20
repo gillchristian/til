@@ -287,3 +287,5 @@ we can specialize class instances in GHCi.
 λ> :t (>>=) @[]
 (>>=) @[] :: [a] -> (a -> [b]) -> [b]
 ```
+
+Credit: [@mvaldesdeleon](https://twitter.com/mvaldesdeleon).

@@ -253,3 +253,37 @@ That would copy 'foo' but also show it in the terminal :ok_hand:
 
 Reference:
 [What is special about /dev/tty? (answer)](https://stackoverflow.com/a/8514853/4530566).
+
+## Use TypeApplications to specialize type class instances (haskell)
+
+Using
+[TypeApplications](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-TypeApplications)
+we can specialize class instances in GHCi.
+
+```
+λ> :set -XTypeApplications
+
+λ> :t (<*>) @((->) _)
+(<*>) @((->) _) :: (w -> a -> b) -> (w -> a) -> w -> b
+
+λ> :t (>>=)
+(>>=) :: Monad m => m a -> (a -> m b) -> m b
+
+λ> :t (<*>) @((->) _)
+(<*>) @((->) _) :: (w -> a -> b) -> (w -> a) -> w -> b
+
+λ> :t (>>=) @((->) _)
+(>>=) @((->) _) :: (w -> a) -> (a -> w -> b) -> w -> b
+
+λ> :t (<*>) @Maybe
+(<*>) @Maybe :: Maybe (a -> b) -> Maybe a -> Maybe b
+
+λ> :t (>>=) @Maybe
+(>>=) @Maybe :: Maybe a -> (a -> Maybe b) -> Maybe b
+
+λ> :t (<*>) @[]
+(<*>) @[] :: [a -> b] -> [a] -> [b]
+
+λ> :t (>>=) @[]
+(>>=) @[] :: [a] -> (a -> [b]) -> [b]
+```

@@ -289,3 +289,39 @@ we can specialize class instances in GHCi.
 ```
 
 Credit: [@mvaldesdeleon](https://twitter.com/mvaldesdeleon).
+
+## Making your own shell is "easy" (shell)
+
+```js
+const readline = require("readline");
+const { spawn } = require("child_process");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.setPrompt("$ ");
+rl.prompt();
+
+rl.on("line", line => {
+  const words = line.split(/\s+/);
+  const bin = words[0];
+  const args = words.slice(1);
+
+  const child = spawn(bin, args);
+
+  child.stdout.pipe(rl.output);
+  child.stderr.pipe(rl.output);
+
+  child.on("exit", () => {
+    rl.prompt();
+  });
+});
+```
+
+Reference:
+[gist.github.com/fvictorio/ca43f0f94...](https://gist.github.com/fvictorio/ca43f0f942fb1bf3b5025e0bc866f465)
+
+Credit: [@tqbfjotld2](https://twitter.com/tqbfjotld2) /
+[fvictorio](https://github.com/fvictorio).

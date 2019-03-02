@@ -325,3 +325,13 @@ Reference:
 
 Credit: [@tqbfjotld2](https://twitter.com/tqbfjotld2) /
 [fvictorio](https://github.com/fvictorio).
+
+## Convert/rezip directory to epub (zip, unix)
+
+```bash
+$ cd some-epub-directory
+$ zip -rX "../$(basename "$(realpath .)").epub" mimetype $(ls|xargs echo|sed 's/mimetype//g')
+```
+
+Reference:
+[Ebooks StackExchange: How to repack an epub file from command line](https://ebooks.stackexchange.com/a/7278).

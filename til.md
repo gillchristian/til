@@ -335,3 +335,12 @@ $ zip -rX "../$(basename "$(realpath .)").epub" mimetype $(ls|xargs echo|sed 's/
 
 Reference:
 [Ebooks StackExchange: How to repack an epub file from command line](https://ebooks.stackexchange.com/a/7278).
+
+## Pass arg to xargs in different position (unix)
+
+```bash
+$ ls *.zip | xargs -I{} cp {} /destination/path
+```
+
+Reference:
+[cp after xargs not working (answer)](https://unix.stackexchange.com/a/349326/224343).

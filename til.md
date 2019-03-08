@@ -344,3 +344,18 @@ $ ls *.zip | xargs -I{} cp {} /destination/path
 
 Reference:
 [cp after xargs not working (answer)](https://unix.stackexchange.com/a/349326/224343).
+
+## Use `font-feature-settings` to align numbers (CSS)
+
+```css
+font-feature-settings: "tnum";
+```
+
+> The font-feature-settings CSS property controls advanced typographic features
+> in OpenType fonts.
+
+Reference:
+[MDN: font-feature-settings](https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings).
+
+Credit: [@ChuckReynolds](https://twitter.com/ChuckReynolds)'s
+[tweet](https://twitter.com/ChuckReynolds/status/1103421323554914309).

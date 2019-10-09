@@ -359,3 +359,12 @@ Reference:
 
 Credit: [@ChuckReynolds](https://twitter.com/ChuckReynolds)'s
 [tweet](https://twitter.com/ChuckReynolds/status/1103421323554914309).
+
+## Run a command in debug mode / tracing (unix)
+
+```
+bash -x my-command
+```
+
+This prints all the "things" `my-command` is doing, as well as the result of
+those.

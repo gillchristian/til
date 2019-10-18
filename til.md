@@ -396,3 +396,18 @@ for sound in "${!animals[@]}"; do echo "$sound - ${animals[$sound]}"; done
 
 Reference:
 [How to define hash tables in Bash? (answer)](https://stackoverflow.com/a/3467959).
+
+## Item in array (bash)
+
+```bash
+if [[ " ${array[@]} " =~ " ${value} " ]]; then
+    # whatever you want to do when arr contains value
+fi
+
+if [[ ! " ${array[@]} " =~ " ${value} " ]]; then
+    # whatever you want to do when arr doesn't contain value
+fi
+```
+
+Reference:
+[Check if a Bash array contains a value (answer)](https://stackoverflow.com/a/15394738/4530566).

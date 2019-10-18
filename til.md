@@ -368,3 +368,31 @@ bash -x my-command
 
 This prints all the "things" `my-command` is doing, as well as the result of
 those.
+
+## Bash "records" (bash)
+
+Declaring:
+
+```bash
+meclare -A animals
+animals=( ["moo"]="cow" ["woof"]="dog")
+
+# or
+declare -A animals=( ["moo"]="cow" ["woof"]="dog")
+```
+
+Accessing:
+
+```bash
+echo "${animals[moo]}"
+
+# "${!animals[@]}" -> expand keys (notice the `!`)
+# "${animals[@]}"  -> expand values
+
+for sound in "${!animals[@]}"; do echo "$sound - ${animals[$sound]}"; done
+```
+
+**Important**: this only works on Bash +4
+
+Reference:
+[How to define hash tables in Bash? (answer)](https://stackoverflow.com/a/3467959).

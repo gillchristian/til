@@ -411,3 +411,11 @@ fi
 
 Reference:
 [Check if a Bash array contains a value (answer)](https://stackoverflow.com/a/15394738/4530566).
+
+## List remote tags (git)
+
+```
+git ls-remote --tags
+```
+
+Reference: [Git Docs](https://git-scm.com/docs/git-ls-remote.html)

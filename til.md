@@ -188,7 +188,7 @@ For `alacritty` it was:
 sudo update-alternatives --install $(which x-terminal-emulator) x-terminal-emulator $(which alacritty) 60
 ```
 
-## cut delimiter new line (unix)
+### cut delimiter new line (unix)
 
 ```bash
 $ cat file.txt | cut -d$'\\n' -f 1-3
@@ -196,7 +196,7 @@ $ cat file.txt | cut -d$'\\n' -f 1-3
 
 Reference: [SO](https://stackoverflow.com/a/21757210/4530566).
 
-## Rename a git branch (git)
+### Rename a git branch (git)
 
 ```
 $ git branch -m new-name
@@ -211,7 +211,7 @@ $ git push origin -u new-name
 Reference:
 [Rename a local and remote branch in git](https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git/).
 
-## Remove lines containing pattern (vim)
+### Remove lines containing pattern (vim)
 
 :boom:
 
@@ -229,7 +229,7 @@ The opposite is also possible, remove all lines NOT containing the pattern.
 Reference:
 [Delete all lines containing a pattern](http://vim.wikia.com/wiki/Delete_all_lines_containing_a_pattern).
 
-## Pipe to command and also show in terminal (unix)
+### Pipe to command and also show in terminal (unix)
 
 I copy stuff from commands output on a daly basis using xclip.
 
@@ -254,7 +254,7 @@ That would copy 'foo' but also show it in the terminal :ok_hand:
 Reference:
 [What is special about /dev/tty? (answer)](https://stackoverflow.com/a/8514853/4530566).
 
-## Use TypeApplications to specialize type class instances (haskell)
+### Use TypeApplications to specialize type class instances (haskell)
 
 Using
 [TypeApplications](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-TypeApplications)
@@ -290,7 +290,7 @@ we can specialize class instances in GHCi.
 
 Credit: [@mvaldesdeleon](https://twitter.com/mvaldesdeleon).
 
-## Making your own shell is "easy" (shell)
+### Making your own shell is "easy" (shell)
 
 ```js
 const readline = require("readline");
@@ -326,7 +326,7 @@ Reference:
 Credit: [@tqbfjotld2](https://twitter.com/tqbfjotld2) /
 [fvictorio](https://github.com/fvictorio).
 
-## Convert/rezip directory to epub (zip, unix)
+### Convert/rezip directory to epub (zip, unix)
 
 ```bash
 $ cd some-epub-directory
@@ -336,7 +336,7 @@ $ zip -rX "../$(basename "$(realpath .)").epub" mimetype $(ls|xargs echo|sed 's/
 Reference:
 [Ebooks StackExchange: How to repack an epub file from command line](https://ebooks.stackexchange.com/a/7278).
 
-## Pass arg to xargs in different position (unix)
+### Pass arg to xargs in different position (unix)
 
 ```bash
 $ ls *.zip | xargs -I{} cp {} /destination/path
@@ -345,7 +345,7 @@ $ ls *.zip | xargs -I{} cp {} /destination/path
 Reference:
 [cp after xargs not working (answer)](https://unix.stackexchange.com/a/349326/224343).
 
-## Use `font-feature-settings` to align numbers (CSS)
+### Use `font-feature-settings` to align numbers (CSS)
 
 ```css
 font-feature-settings: "tnum";
@@ -360,7 +360,7 @@ Reference:
 Credit: [@ChuckReynolds](https://twitter.com/ChuckReynolds)'s
 [tweet](https://twitter.com/ChuckReynolds/status/1103421323554914309).
 
-## Run a command in debug mode / tracing (unix)
+### Run a command in debug mode / tracing (unix)
 
 ```
 bash -x my-command
@@ -369,7 +369,7 @@ bash -x my-command
 This prints all the "things" `my-command` is doing, as well as the result of
 those.
 
-## Bash "records" (bash)
+### Bash "records" (bash)
 
 Declaring:
 
@@ -397,7 +397,7 @@ for sound in "${!animals[@]}"; do echo "$sound - ${animals[$sound]}"; done
 Reference:
 [How to define hash tables in Bash? (answer)](https://stackoverflow.com/a/3467959).
 
-## Item in array (bash)
+### Item in array (bash)
 
 ```bash
 if [[ " ${array[@]} " =~ " ${value} " ]]; then
@@ -412,10 +412,35 @@ fi
 Reference:
 [Check if a Bash array contains a value (answer)](https://stackoverflow.com/a/15394738/4530566).
 
-## List remote tags (git)
+### List remote tags (git)
 
 ```
 git ls-remote --tags
 ```
 
 Reference: [Git Docs](https://git-scm.com/docs/git-ls-remote.html)
+
+### Read & change mouse acceleration on Mac (mac)
+
+```
+# read
+$ defaults read .GlobalPreferences com.apple.mouse.scaling
+
+# write
+# -1     -> off
+# 0 .. 3 -> on
+$ defaults write .GlobalPreferences com.apple.mouse.scaling -1
+```
+
+### Scripting with Haskell (haskell)
+
+```haskell
+#!/usr/bin/env stack
+{- stack
+   script
+   --resolver lts-13.27
+-}
+
+main :: IO ()
+main = putStrLn "Hello, World!"
+```

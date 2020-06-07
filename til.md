@@ -444,3 +444,11 @@ $ defaults write .GlobalPreferences com.apple.mouse.scaling -1
 main :: IO ()
 main = putStrLn "Hello, World!"
 ```
+
+### See logs of systemd (linux, unix)
+
+```bash
+$ journalctl -u service-name -b
+```
+
+Reference: [unix.stackexchange.com](https://unix.stackexchange.com/a/225407)

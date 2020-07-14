@@ -452,3 +452,11 @@ $ journalctl -u service-name -b
 ```
 
 Reference: [unix.stackexchange.com](https://unix.stackexchange.com/a/225407)
+
+### sed with capture group (unix)
+
+Replace using capture groups (`-r` is for extended regexp, `-E`on MacOS)
+
+```bash
+rg '^(- \([A-Z]{2,3}-[0-9]{4}\)):' ~/.todos -l | xargs sed -i.bak -E 's/(- \([A-Z]*-[0-9]*\)):/\1/'
+```

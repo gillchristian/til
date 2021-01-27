@@ -460,3 +460,11 @@ Replace using capture groups (`-r` is for extended regexp, `-E`on MacOS)
 ```bash
 rg '^(- \([A-Z]{2,3}-[0-9]{4}\)):' ~/.todos -l | xargs sed -i.bak -E 's/(- \([A-Z]*-[0-9]*\)):/\1/'
 ```
+
+Find all the ocurrences of `Old` and replace `Old[A-Za-z]*` with `[A-Za-z]*Old`:
+
+```base
+rg -l -e Old src | xargs sed -i.bak -e "s/Old\([A-Za-z]*\)/\1Old/g"
+```
+
+
